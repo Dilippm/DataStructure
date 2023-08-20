@@ -62,23 +62,40 @@ const a = [8, 20, -2, 4, -6];
 // }
 // const b = [-2,5,1,7,-8];
 // console.log(quicksort(b))
-function quicksort(a){
-    if(a.length<=1){
-        return a
-    }else{
-        let pivot=a[0];
-        let left=[];
-        let right =[];
-        for(let i=1;i<a.length;i++){
-            if(a[i]<pivot){
-                left.push(a[i])
-            }else{
-                right.push(a[i])
-            }
-        }
+// function quicksort(a){
+//     if(a.length<=1){
+//         return a
+//     }else{
+//         let pivot=a[0];
+//         let left=[];
+//         let right =[];
+//         for(let i=1;i<a.length;i++){
+//             if(a[i]<pivot){
+//                 left.push(a[i])
+//             }else{
+//                 right.push(a[i])
+//             }
+//         }
 
-        return [...quicksort(left),pivot,...quicksort(right)]
+//         return [...quicksort(left),pivot,...quicksort(right)]
+//     }
+// }
+function quicksort(a){
+    if(a.length<1){
+        return a
     }
+    let pivot =a[0]
+    let left = []
+    let right =[]
+   for(let i=1;i<a.length;i++){
+    if(a[i]<pivot){
+        left.push(a[i])
+    }else{
+        right.push(a[i])
+    }
+   }
+   return [...quicksort(left),pivot,...quicksort(right)]
+
 }
 const b = [-2,5,-2,7,-8];
 console.log(quicksort(b));

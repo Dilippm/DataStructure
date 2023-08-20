@@ -270,71 +270,110 @@
 // // stack.middlepop()
 // // stack.print()
 
+// class Node{
+//     constructor(value){
+//         this.value=value;
+//         this.next=null;
+//     }
+// }
+// class Stack{
+//     constructor(){
+//         this.top =null;
+//     }
+//     push(x){
+//         let node = new Node(x)
+
+//         if(!this.top){
+//             this.top =node;
+//         }else{
+//           node.next=this.top;
+//            this.top=node;
+//         }
+//     }
+//     pop(){
+//         if(!this.top){
+//             return
+//         }else{
+//             this.top=this.top.next
+//         }
+//     }
+//     middle(){
+//         if(!this.top){
+//             return
+//         }else{
+//             let sprev= null;
+//             let prev =null;
+//             let slow=this.top;
+//             let fast =this.top;
+
+          
+//             while(fast && fast.next){
+//                 sprev=prev;
+//                 prev=slow;
+//                 slow=slow.next;
+//                 fast=fast.next.next;
+//             }
+//             if(fast){
+//                 return slow
+//             }else{
+//                 return [prev.value,slow.value]
+//             }
+//         }
+//     }
+//     print(){
+//         if(!this.top){
+//             console.log("no top");
+//         }else{
+//             let temp= this.top;
+//             let cur=""
+//             while(temp){
+//                     cur+= " "+ temp.value;
+//                     temp=temp.next;
+//             }
+//             console.log(cur);
+//         }
+//     }
+// }
 class Node{
     constructor(value){
-        this.value=value;
-        this.next=null;
+        this.value= value;
+        this.next= null;
     }
 }
 class Stack{
     constructor(){
-        this.top =null;
+        this.top= null;
     }
-    push(x){
-        let node = new Node(x)
-
+    push(value){
+        let node= new Node(value);
         if(!this.top){
-            this.top =node;
+            this.top= node;
         }else{
-          node.next=this.top;
-           this.top=node;
+         node.next=this.top;
+         this.top= node;
+
         }
     }
     pop(){
-        if(!this.top){
-            return
-        }else{
-            this.top=this.top.next
-        }
-    }
-    middle(){
-        if(!this.top){
-            return
-        }else{
-            let sprev= null;
-            let prev =null;
-            let slow=this.top;
-            let fast =this.top;
+        if(this.top){
+         this.top= this.top.next;
 
-          
-            while(fast && fast.next){
-                sprev=prev;
-                prev=slow;
-                slow=slow.next;
-                fast=fast.next.next;
-            }
-            if(fast){
-                return slow
-            }else{
-                return [prev.value,slow.value]
-            }
         }
     }
     print(){
-        if(!this.top){
-            console.log("no top");
-        }else{
-            let temp= this.top;
-            let cur=""
-            while(temp){
-                    cur+= " "+ temp.value;
-                    temp=temp.next;
+                if(!this.top){
+                    console.log("no top");
+                }else{
+                    let temp= this.top;
+                    let cur=""
+                    while(temp){
+                            cur+= "<--"+ temp.value;
+                            temp=temp.next;
+                    }
+                    console.log(cur);
+                }
             }
-            console.log(cur);
-        }
-    }
 }
-
 let stack =new Stack();
 stack.push(3)
 stack.push(8)
@@ -343,4 +382,3 @@ stack.push(45)
 stack.print()
 // stack.pop()
 // stack.print()
-console.log(stack.middle());

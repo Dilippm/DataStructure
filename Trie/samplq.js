@@ -148,9 +148,9 @@ class Trie{
 
 let str= "vishnu";
 let trie =new Trie(str);
-console.log(trie.contains("ishnu "));
-// trie.suffixTrie("vismaya")
-// trie.suffixTrie("vasu")
-//trie.suffixTrie(str);
-//console.log(trie.contains(str));
-//trie.printValues()
+
+ trie.suffixTrie("vismaya")
+ trie.suffixTrie("vasu")
+trie.suffixTrie(str);
+
+trie.printValues()

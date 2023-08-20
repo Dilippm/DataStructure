@@ -59,64 +59,301 @@
 //         }
 //       }
 // }
+// class Graph{
+//   constructor(){
+//     this.graph =new Map();
+
+//   }
+//   addvertex(vertex){
+//     this.graph.set(vertex,new Array())
+//   }
+//   insert(vertex,edge,isBidirectional){
+//     if(!this.graph.has(vertex)){
+//       this.addvertex(vertex)
+//     }
+//     if(!this.graph.has(edge)){
+//       this.addvertex(edge)
+//     }
+//     this.graph.get(vertex).push(edge)
+//     if(isBidirectional){
+//       this.graph.get(edge).push(vertex)
+//     }
+//   }
+//   bfs(start){
+//     let visited = new Set();
+//     let queue =[];
+//     visited.add(start);
+//     queue.push(start)
+//     while(queue.length>0){
+//       let vertex = queue.shift();
+// console.log(vertex);
+//       let edges= this.graph.get(vertex);
+//       for(let edge of edges){
+//         if(!visited.has(edge)){
+//           visited.add(edge)
+//           queue.push(edge)
+//         }
+//       }
+//     }
+//   }
+//   dfs(start,visited =new Set()){
+//     visited.add(start);
+//     console.log(start);
+//     for(let edge of this.graph.get(start)){
+//       if(!visited.has(edge)){
+//         this.dfs(edge,visited);
+//       }
+      
+//     }
+//   }
+// }
+// let gp =new Graph();
+
+// gp.insert(1,22,true);
+// gp.insert(45,2,true);
+// gp.insert(19,78,true);
+// gp.display()
+// console.log("bfs......");
+// //gp.bfs(45);
+// gp.dfs(45);
+// console.log("delte");
+// gp.delete(45)
+// gp.display()
+
+// class Graph{
+//   constructor(){
+//     this.graph= new Map()
+//   }
+//   addVertex(vertex){
+//     this.graph.set(vertex,new Array())
+//   }
+//   insert(vertex,edge,isBidirectional){
+//     if(!this.graph.has(vertex)){
+//       this.addVertex(vertex)
+//     }
+//     if(!this.graph.has(edge)){
+//       this.addVertex(edge)
+//     }
+//     this.graph.get(vertex).push(edge)
+//     if(isBidirectional){
+//       this.graph.get(edge).push(vertex)
+//     }
+//   }
+//   bfs(start){
+//     let visited = new Set();
+//     let queue =[];
+//     visited.add(start)
+//     queue.push(start)
+//     while(queue.length>0){
+//       let vertex = queue.shift();
+//       console.log(vertex);
+//      let edges = this.graph.get(vertex)
+//      for(let edge of edges){
+//       if(!visited.has(edge)){
+//         visited.add(edge)
+//         queue.push(edge)
+//       }
+//      }
+//     }
+//   }
+//  dfs(start, visited =new Set()){
+//   visited.add(start)
+//   console.log(start);
+//   for(let edge of this.graph.get(start)){
+//     if(!visited.has(edge)){
+//       this.dfs(edge,visited)
+//     }
+//   }
+//  }
+ 
+// }
+// class Graph{
+//   constructor(){
+//     this.graph= new Map()
+//   }
+//   addVertex(vertex){
+//     this.graph.set(vertex)
+//   }
+//   insert(vertex,edge,isBidirectional){
+//     if(!this.graph.has(vertex)){
+//       this.addVertex(vertex)
+//     }
+//     if(!this.graph.has(edge)){
+//       this.addVertex(edge)
+//     }
+//     this.graph.get(vertex).push(edge)
+//     if(isBidirectional){
+//       this.graph.get(edge).push(vertex)
+//     }
+//   }
+//   bfs(start){
+//     let visited= new Set();
+//     let queue =[]
+//     visited.add(start)
+//     queue.push(start)
+//     while(queue.length){
+//       let vertex = queue.shift()
+//      console.log(vertex);
+//      let edges=  this.graph.get(vertex)
+//      for(let edge of edges){
+//       visited.add(edge)
+//       queue.push(edge)
+//      }
+//     }
+//   }
+// remove(vertex){
+//   if(this.graph.has(vertex)){
+//     let edges= this.graph.get(vertex)
+//     for(let edge of edges){
+//       this.graph.get(edge).splice(this.graph.get(edge).indexOf(vertex),1);
+
+//     }
+//     this.graph.remove(vertex)
+//   }
+
+// }
+  
+//   dfs(start,visited =new Set()){
+// visited.add(start)
+// console.log(start);
+// for(let edge of this.graph.get(start)){
+//   if(!visited.has(edge)){
+//            this.dfs(edge,visited);
+//        }
+
+// }
+// }
+// }
+// class Graph{
+//   constructor(){
+//     this.Graph = new Map()
+//   }
+//   addVertex(vertex){
+//     this.Graph.set(vertex)
+//   }
+//   insert(vertex,edge,isBidirectional){
+//     if(!this.Graph.has(vertex)){
+//       this.addVertex(vertex)
+//     }
+//     if(!this.Graph.has(edge)){
+//       this.addVertex(edge)
+//     }
+//     this.graph.get(vertex).push(edge)
+//     if(isBidirectional){
+//       this.graph.get(vertex).push(edge)
+//     }
+//   }
+//   delete(vertex){
+//     if(this.graph.has(vertex)){
+//       let edges = this.graph.get(vertex)
+//       for(let edge of edges){
+//         this.graph.get(edge).splice(this.graph.get(edge).indexOf(vertex),1);
+
+//       }
+//       this.delete(vertex)
+//     }
+//   }
+//   bfs(start){
+//     let visited = new Set();
+//     let queue = []
+//     visited.add(start)
+//     queue.push(start)
+//     while(queue.length){
+//       let vertex = queue.shift()
+//       console.log(vertex);
+// let edges=  this.graph.get(vertex)
+// for(let edge of edges){
+//   visited.add(edge)
+//   queue.push(edge)
+// }
+//     }
+//   }
+//   dfs(start,visited =newSet()){
+//     visited.add(start)
+//     console.log(start);
+//     for(let edge of this.graph.get(start)){
+//       if(!visited.has(edge)){
+//         this.dfs(edge,visited)
+//       }
+//     }
+//   }
+// }
 class Graph{
   constructor(){
-    this.graph =new Map();
-
+    this.graph =new Map()
   }
-  addvertex(vertex){
-    this.graph.set(vertex,new Array())
+  addVertex(vertex){
+    this.graph.set(vertex, []); 
   }
   insert(vertex,edge,isBidirectional){
     if(!this.graph.has(vertex)){
-      this.addvertex(vertex)
+      this.addVertex(vertex)
     }
     if(!this.graph.has(edge)){
-      this.addvertex(edge)
+      this.addVertex(edge)
     }
     this.graph.get(vertex).push(edge)
     if(isBidirectional){
       this.graph.get(edge).push(vertex)
+
     }
   }
-  bfs(start){
-    let visited = new Set();
-    let queue =[];
-    visited.add(start);
-    queue.push(start)
-    while(queue.length>0){
-      let vertex = queue.shift();
-console.log(vertex);
-      let edges= this.graph.get(vertex);
+  remove(vertex){
+    if(this.graph.has(vertex)){
+      let edges = this.graph.get(vertex);
       for(let edge of edges){
-        if(!visited.has(edge)){
-          visited.add(edge)
-          queue.push(edge)
+        this.graph.get(edge).splice(this.graph.get(edge).indexOf(vertex),1)
+      }
+      this.graph.delete(vertex)
+    }
+  }
+  bfs(start) {
+    let visited = new Set([start])
+    let queue = [start];
+    while (queue.length) {
+      let vertex = queue.shift();
+      console.log(vertex);
+      let edges = this.graph.get(vertex);
+      for (let edge of edges) {
+        if (!visited.has(edge)) {
+          visited.add(edge);
+          queue.push(edge);
         }
       }
     }
   }
-  dfs(start,visited =new Set()){
-    visited.add(start);
+  
+  dfs(start,visited = new Set()){
+    visited.add(start)
     console.log(start);
-    for(let edge of this.graph.get(start)){
-      if(!visited.has(edge)){
-        this.dfs(edge,visited);
-      }
-      
+    for(let edges  of this.graph.get(start)){
+    if(!visited.has(edges)){
+      this.dfs(edges,visited)
+    }
     }
   }
+  display() {
+        for (let [vertex, edges] of this.graph) {
+           console.log(vertex, edges);
+          }
+        }
 }
-let gp =new Graph();
+ let gp =new Graph();
 
 gp.insert(1,22,true);
+gp.insert(1,89,true);
 gp.insert(45,2,true);
+gp.insert(22,2,true);
 gp.insert(19,78,true);
+gp.insert(45,78,true);
+
 gp.display()
-console.log("bfs......");
-//gp.bfs(45);
-gp.dfs(45);
-console.log("delte");
-gp.delete(45)
-gp.display()
+console.log("dfs");
+gp.dfs(1)
+console.log("bfs");
+gp.bfs(1)
+
+
+
+
 

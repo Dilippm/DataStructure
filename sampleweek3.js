@@ -243,61 +243,169 @@
 //         return node.children.has(this.endSymbol)
 //     }
 // }
-class Graph{
-    constructor(){
-        this.graph =new Map()
-    }
-    addvertex(vertex){
-        this.graph.set(vertex,new Array())
-    }
-    insert(vertex,edge,isBidirectional){
-        if(!this.graph.has(vertex)){
-            this.addvertex(vertex)
-        }
-        if(!this.graph.has(edge)){
-            this.addvertex(edge)
-        }
-        this.graph.get(vertex).push(edge);
-        if(isBidirectional){
-            this.graph.get(edge).push(vertex);
+// class Graph{
+//     constructor(){
+//         this.graph =new Map()
+//     }
+//     addvertex(vertex){
+//         this.graph.set(vertex,new Array())
+//     }
+//     insert(vertex,edge,isBidirectional){
+//         if(!this.graph.has(vertex)){
+//             this.addvertex(vertex)
+//         }
+//         if(!this.graph.has(edge)){
+//             this.addvertex(edge)
+//         }
+//         this.graph.get(vertex).push(edge);
+//         if(isBidirectional){
+//             this.graph.get(edge).push(vertex);
 
-        }
-    }
-    delete(vertex){
-        if(this.graph.has(vertex)){
-            let edge = this.graph.get(vertex);
-            for(let edges of edge){
-                this.graph.get(edges).splice(this.graph.get(edges).inOrder(vertex),1);
-            }
-            this.graph.delete(vertex);
-        }
+//         }
+//     }
+//     delete(vertex){
+//         if(this.graph.has(vertex)){
+//             let edge = this.graph.get(vertex);
+//             for(let edges of edge){
+//                 this.graph.get(edges).splice(this.graph.get(edges).inOrder(vertex),1);
+//             }
+//             this.graph.delete(vertex);
+//         }
 
-    }
-    bfs(start){
-        let visited = new Set();
-        let queue =[];
-        visited.add(start);
-        queue.push(start);
-        while(queue.length>0){
-            let vertex = queue.shift();
-            console.log(vertex);
-            let edges = this.graph.get(vertex);
-            for(let edge of edges){
-                if(!visited.has(edge)){
-visited.add(edge);
-queue.push(edge)
-                }
-            }
-        }
-    }
-    dfs(start,visited =new Set()){
-        visited.add(start);
-        console.log(start);
-        for(let edge of this.graph.get(start)){
-            if(!visited.has(edge)){
-                this.dfs(edge,visited )
-            }
-        }
+//     }
+//     bfs(start){
+//         let visited = new Set();
+//         let queue =[];
+//         visited.add(start);
+//         queue.push(start);
+//         while(queue.length>0){
+//             let vertex = queue.shift();
+//             console.log(vertex);
+//             let edges = this.graph.get(vertex);
+//             for(let edge of edges){
+//                 if(!visited.has(edge)){
+// visited.add(edge);
+// queue.push(edge)
+//                 }
+//             }
+//         }
+//     }
+//     dfs(start,visited =new Set()){
+//         visited.add(start);
+//         console.log(start);
+//         for(let edge of this.graph.get(start)){
+//             if(!visited.has(edge)){
+//                 this.dfs(edge,visited )
+//             }
+//         }
 
-    }
-}
+//     }
+// }
+// let obj = [
+//     {
+//       name:"Ameen",
+//       mark : [
+//         {
+//           subject:"Maths",
+//           marks:30
+//         },
+//         {
+//           subject:"Malayalam",
+//           marks:45
+//         },
+//         {
+//           subject:"Physics",
+//           marks:35
+//         },
+//         {
+//           subject:"Chemistry",
+//           marks:38
+//         },
+//       ]
+//     },
+//     {
+//       name:"Vishnu",
+//       mark : [
+//         {
+//           subject:"Maths",
+//           marks:56
+//         },
+//         {
+//           subject:"Malayalam",
+//           marks:37
+//         },
+//         {
+//           subject:"Physics",
+//           marks:45
+//         },
+//         {
+//           subject:"Chemistry",
+//           marks:44
+//         },
+//       ]
+//     },
+//     {
+//       name:"Jaseel",
+//       mark : [
+//         {
+//           subject:"Maths",
+//           marks:43
+//         },
+//         {
+//           subject:"Malayalam",
+//           marks:40
+//         },
+//         {
+//           subject:"Physics",
+//           marks:39
+//         },
+//         {
+//           subject:"Chemistry",
+//           marks:29
+//         },
+//       ]
+//     },
+//     {
+//       name:"Adhil",
+//       mark : [
+//         {
+//           subject:"Maths",
+//           marks:49
+//         },
+//         {
+//           subject:"Malayalam",
+//           marks:37
+//         },
+//         {
+//           subject:"Physics",
+//           marks:28
+//         },
+//         {
+//           subject:"Chemistry",
+//           marks:29
+//         },
+//       ]
+//     }
+//   ]
+//   let b= obj.map((item)=>{
+//     let result= item.mark.filter((m)=> {return m.marks<30});
+ 
+//         return {
+//           name: item.name,
+//           marks: result,
+//         };
+      
+//   })
+//   console.log(JSON.stringify(b,null,2));
+
+let person ={
+   name:"amar",
+   age:18,
+   greeting:  ()=>{
+      console.log(`hello ${this.name}`);
+   }
+   }
+person.greeting()
+
+
+

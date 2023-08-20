@@ -60,13 +60,23 @@ const a =[-2,5,1,7,-8];
 
 
 
+// for(let i=1;i<a.length;i++){
+//     let t=a[i];
+//     let j=i-1;
+//     while(j>=0 && a[j]>t){
+//         a[j+1]=a[j];
+//         j=j-1
+//     }
+//     a[j+1]=t;
+// }
+// console.log(a);
 for(let i=1;i<a.length;i++){
-    let t=a[i];
+    let t =a[i];
     let j=i-1;
     while(j>=0 && a[j]>t){
-        a[j+1]=a[j];
+        a[j+1]=a[j]
         j=j-1
     }
-    a[j+1]=t;
+    a[j+1] =t
 }
 console.log(a);

@@ -117,7 +117,7 @@ class MInHeap{
     showDown(cur){
         let end =this.heap.length-1;
         let left=this.leftChild(cur);
-        while(left<=end){
+        while(left<=end ){
             let right =this.rightChild(cur);
             let toShift;
             if(right<=end && this.heap[right]<this.heap[cur]){
@@ -162,7 +162,7 @@ class MInHeap{
         }
     }
 }
-let array=[6,2,8]
+let array=[100,6,2,8]
 let heap=new MInHeap(array)
 heap.display()
 console.log("after insertion");

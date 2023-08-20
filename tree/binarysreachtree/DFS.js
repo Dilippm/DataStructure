@@ -603,154 +603,218 @@ class Node{
     }
 
 }
+// class BST{
+//     constructor(){
+//         this.root = null;
+//     }
+//     isEmpty(){
+//         if(this.root==null){
+//             return true;
+//         }else{
+//             return false;
+//         }
+//     }
+//     insert(value){
+//         let node= new Node(value);
+//         if(this.root==null){
+//             this.root =node;
+//         }else{
+//             return this.insertion(this.root,node)
+//         }
+        
+//     }
+//     insertion(root,node){
+//         if(root.value>node.value){
+//             if(root.left ==null){
+//                 root.left= node
+//             }else{
+//                 return this.insertion(root.left,node)
+//             }
+//         }else if(root.value<node.value){
+//             if(root.right==null){
+//                 root.right =node;
+//             }else{
+//                 return this.insertion(root.right,node);
+//             }
+//         }
+//     }
+//     search(root,value){
+//         if(!root){
+//             return false;
+//         }else if(root.value==value){
+//            return true;
+//         }else if(root.vale>value){
+//            return  this.search(root.left,value)
+//         }else if(root.value<value){
+//            return  this.search(root.right,value)
+//         }
+//     }
+//     //traversal 
+//     //preorder
+//     preorder(root){
+//         if(root==null){
+//             return root
+//         }
+//         console.log(root.value);
+//         this.preorder(root.left);
+//         this.preorder(root.right);
+//     }
+//     inorder(root){
+//         if(root==null){
+//             return root;
+//         }
+//         this.inorder(root.left);
+//         console.log(root.value);
+//         this.inorder(root.right)
+//     }
+//     postorder(root){
+//         if(root==null){
+//             return null;
+//         }
+//         this.postorder(root.left);
+//         this.postorder(root.right);
+//         console.log(root.value);
+//     }
+//     min(root){
+//         if(!root.left){
+//             return root.value;
+//         }else {
+//             return this.min(root.left)
+//         }
+//     }
+//     max(root){
+//         if(!root.right){
+//             return root.value;
+//         }else{
+//             return this.min(root.right);
+//         }
+//     }
+//     delete(value){
+//         this.root =this.deletenode(this.root,value);
+//     }
+//     deletenode(root,value){
+//         if(root==null){
+//             return root;
+//         }else{
+//             if(root.value>value){
+//                 this.deletenode(root.left,value);
+//             }
+//             if(root.value<value){
+//                 this.deletenode(root.right,value);
+//             }
+//             if(!root.left && !root.right){
+//                 return null;
+//             }
+//             if(!root.left){
+//                 return root.right
+//             }
+//             if(!root.right){
+                
+//                 return root.left;
+//             }
+//            root.value =this.min(root.right);
+//            root.right =this.deletenode(root.right,root.value)
+//         }
+//     }
+//     isbst(root){
+//         if(root==null){
+//             return true;
+//         }else{
+//             if(root.left!=null && root.left.value>root.value){
+//                 return false;
+//             }
+//             if(root.right!=null && root.right<root.value){
+//                 return false;
+
+//             }
+//             if((!this.isbst(root.left))||(!this.isbst(root.right))){
+//                 return false;
+//             }
+//             return true;
+//         }
+//     }
+//     closest(num){
+//         let currentnode =this.root;
+//         let closest =currentnode.value;
+//         while(currentnode){
+//             if((Math.abs(num-closest))>((Math.abs(num-currentnode.value)))){
+//                 closest =currentnode.value;
+
+//             }
+//             if(num<currentnode.value){
+//                 currentnode =currentnode.left
+//             }else if(num>currentnode.value){
+//                 currentnode= currentnode.right;
+//             }else{
+//                 break;
+//             }
+//         }
+//         return closest;
+
+//     }
+// }
 class BST{
     constructor(){
-        this.root = null;
-    }
-    isEmpty(){
-        if(this.root==null){
-            return true;
-        }else{
-            return false;
-        }
+        this.root = null
     }
     insert(value){
-        let node= new Node(value);
-        if(this.root==null){
-            this.root =node;
+        let node= new Node(value)
+        if(this.root===null){
+            this.root= node;
         }else{
-            return this.insertion(this.root,node)
+            this.insertNode(this.root,node)
         }
-        
     }
-    insertion(root,node){
+    insertNode(root,node){
         if(root.value>node.value){
-            if(root.left ==null){
-                root.left= node
+            if(!root.left){
+                root.left= node;
             }else{
-                return this.insertion(root.left,node)
+                this.insertNode(root.left,node)
             }
-        }else if(root.value<node.value){
-            if(root.right==null){
-                root.right =node;
+        }else{
+            if(!root.right){
+                root.right= node;
             }else{
-                return this.insertion(root.right,node);
+                this.insertNode(root.right,node)
             }
         }
     }
-    search(root,value){
+    search(root,target){
         if(!root){
             return false;
-        }else if(root.value==value){
-           return true;
-        }else if(root.vale>value){
-           return  this.search(root.left,value)
-        }else if(root.value<value){
-           return  this.search(root.right,value)
-        }
-    }
-    //traversal 
-    //preorder
-    preorder(root){
-        if(root==null){
-            return root
-        }
-        console.log(root.value);
-        this.preorder(root.left);
-        this.preorder(root.right);
-    }
-    inorder(root){
-        if(root==null){
-            return root;
-        }
-        this.inorder(root.left);
-        console.log(root.value);
-        this.inorder(root.right)
-    }
-    postorder(root){
-        if(root==null){
-            return null;
-        }
-        this.postorder(root.left);
-        this.postorder(root.right);
-        console.log(root.value);
-    }
-    min(root){
-        if(!root.left){
-            return root.value;
-        }else {
-            return this.min(root.left)
-        }
-    }
-    max(root){
-        if(!root.right){
-            return root.value;
         }else{
-            return this.min(root.right);
-        }
-    }
-    delete(value){
-        this.root =this.deletenode(this.root,value);
-    }
-    deletenode(root,value){
-        if(root==null){
-            return root;
-        }else{
-            if(root.value>value){
-                this.deletenode(root.left,value);
-            }
-            if(root.value<value){
-                this.deletenode(root.right,value);
-            }
-            if(!root.left && !root.right){
-                return null;
-            }
-            if(!root.left){
-                return root.right
-            }
-            if(!root.right){
-                
-                return root.left;
-            }
-           root.value =this.min(root.right);
-           root.right =this.deletenode(root.right,root.value)
-        }
-    }
-    isbst(root){
-        if(root==null){
-            return true;
-        }else{
-            if(root.left!=null && root.left.value>root.value){
-                return false;
-            }
-            if(root.right!=null && root.right<root.value){
-                return false;
-
-            }
-            if((!this.isbst(root.left))||(!this.isbst(root.right))){
-                return false;
-            }
-            return true;
-        }
-    }
-    closest(num){
-        let currentnode =this.root;
-        let closest =currentnode.value;
-        while(currentnode){
-            if((Math.abs(num-closest))>((Math.abs(num-currentnode.value)))){
-                closest =currentnode.value;
-
-            }
-            if(num<currentnode.value){
-                currentnode =currentnode.left
-            }else if(num>currentnode.value){
-                currentnode= currentnode.right;
+            if(root.value== target){
+                return true;
             }else{
-                break;
+                if(root.value<target){
+                    return this.search(root.right,target)
+                }else{
+                    return this.search(root.left,target)
+                }
             }
         }
-        return closest;
-
+    }
+    preOrder(root){
+        if(root){
+            console.log(root.value);
+            this.preOrder(root.left)
+            this.preOrder(root.right)
+        }
+    }
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            console.log(root.value);
+            this.inOrder(root.right)
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left)
+            this.postOrder(root.right)
+            console.log(root.value);
+        }
     }
 }
 let bst= new BST()
